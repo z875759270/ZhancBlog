@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -10,11 +11,17 @@ public partial class Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        CreateCategories();
     }
 
-    private void CreatOneBlog()
+
+
+    /// <summary>
+    /// 创建一篇Blog
+    /// </summary>
+    private void CreateOneBlog()
     {
-        string htmlStr ="            <div class=\"post col-xl-6\">\n" +
+        string htmlStr = "            <div class=\"post col-xl-6\">\n" +
             "                            <div class=\"post-thumbnail\"><a href=\"BlogInfo.aspx\">\n" +
             "                                <img src=\"img/blog-post-1.jpeg\" alt=\"...\" class=\"img-fluid\"></a></div>\n" +
             "                            <div class=\"post-details\">\n" +
@@ -37,5 +44,36 @@ public partial class Default2 : System.Web.UI.Page
             "                                </footer>\n" +
             "                            </div>\n" +
             "                        </div>";
+    }
+
+    /// <summary>
+    /// 创建分类 Widget
+    /// </summary>
+    private void CreateCategories()
+    {
+        divCategories.InnerHtml = string.Empty;
+        divCategories.InnerHtml = "<header><h3 class=\"h5\">分类</h3></header>";
+        CategoriesManager categoriesManager = new CategoriesManager();
+        List<Categories> categories = categoriesManager.SelectAllCategories();
+        for (int i = 0; i < categories.Count; i++)
+        {
+            divCategories.InnerHtml += "<div class=\"item d-flex justify-content-between\"><a href=\"#\">" + categories[i].cCategory + "</a><span>" + categories[i].cSum + "</span></div>";
+        }
+    }
+
+    /// <summary>
+    /// 创建Tags Widget
+    /// </summary>
+    private void CreateTags()
+    {
+        divTags.InnerHtml = string.Empty;
+        divTags.InnerHtml = "<header><h3 class=\"h5\">标签</h3></header><ul class=\"list-inline\">";
+        //---
+        divTags.InnerHtml += "<li class=\"list-inline-item\"><a href=\"#\" class=\"tag\">#ASP.NET</a></li>";
+        divTags.InnerHtml += "<li class=\"list-inline-item\"><a href=\"#\" class=\"tag\">#CSharp</a></li>";
+        divTags.InnerHtml += "<li class=\"list-inline-item\"><a href=\"#\" class=\"tag\">#Python</a></li>";
+        divTags.InnerHtml += "<li class=\"list-inline-item\"><a href=\"#\" class=\"tag\">#Git</a></li>";
+        //---
+        divTags.InnerHtml += "</ul>";
     }
 }

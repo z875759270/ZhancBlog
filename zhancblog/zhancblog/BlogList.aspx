@@ -120,18 +120,9 @@
                 </div>
             </main>
             <aside class="col-lg-4">
-                <!-- Widget [Search Bar Widget]-->
-                <div class="widget search">
-                    <div class="search-form">
-                        <div class="form-group">
-                            <input type="search" placeholder="在此搜索博客...">
-                            <button type="submit" class="submit"><i class="icon-search"></i></button>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Widget [Categories Widget]-->
-                <div class="widget categories">
+                <div class="widget categories" id="divCategories" runat="server">
                     <header>
                         <h3 class="h5">分类</h3>
                     </header>
@@ -142,7 +133,7 @@
                     <div class="item d-flex justify-content-between"><a href="#">Local</a><span>25</span></div>
                 </div>
                 <!-- Widget [Tags Cloud Widget]-->
-                <div class="widget tags">
+                <div class="widget tags" id="divTags" runat="server">
                     <header>
                         <h3 class="h5">标签</h3>
                     </header>

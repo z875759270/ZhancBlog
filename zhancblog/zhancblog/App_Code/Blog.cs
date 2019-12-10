@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 
 /// <summary>
@@ -140,6 +139,66 @@ public class BlogManager
     }
 
     /// <summary>
+    /// 模糊查询
+    /// </summary>
+    /// <param name="str">查询关键词</param>
+    /// <returns></returns>
+    public List<Blog> SelectBlogBySearch(string str)
+    {
+        try
+        {
+            string sqlStr = "SELECT * FROM tBlog WHERE b_Title LIKE " + str;
+            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add( new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 分页查询
+    /// </summary>
+    /// <param name="offset">偏移量，从第几条开始查询</param>
+    /// <param name="pageSize">一页的记录数，默认4</param>
+    /// <returns></returns>
+    public List<Blog> SelectOnePage(int offset, int pageSize = 4)
+    {
+        try
+        {
+            string sqlStr = "SELECT TOP(@pageSize) * FROM tBlog WHERE b_ID NOT IN(SELECT TOP(@offset) b_ID FROM tBlog)";
+            SqlParameter[] paras = new SqlParameter[]
+            {
+                new SqlParameter("@pageSize",pageSize),
+                new SqlParameter("@offset",offset)
+            };
+            DataTable dt = DAO.dbTools.GetTable(sqlStr, paras);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
     /// 查询所有的Blog
     /// </summary>
     /// <returns></returns>
@@ -152,9 +211,9 @@ public class BlogManager
             List<Blog> blogs = new List<Blog> { };
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                blogs[i] = new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                blogs.Add( new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
                     dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
-                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString()));
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
             }
             return blogs;
         }

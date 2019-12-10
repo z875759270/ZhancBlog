@@ -134,15 +134,6 @@
                 </div>
             </main>
             <aside class="col-lg-4">
-                <!-- Widget [Search Bar Widget]-->
-                <div class="widget search">
-                    <div class="search-form">
-                        <div class="form-group">
-                            <input type="search" placeholder="在此搜索博客...">
-                            <button type="submit" class="submit"><i class="icon-search"></i></button>
-                        </div>
-                    </div>
-                </div>
                 <!-- Widget [Latest Posts Widget]        -->
                 <div class="widget latest-posts">
                     <header>
