@@ -120,11 +120,11 @@ public class BlogManager
     {
         try
         {
-            string sqlStr = "SELECT * FROM tBlog WHERE b_ID";
+            string sqlStr = "SELECT * FROM tBlog WHERE b_ID=@id";
             SqlParameter[] paras = new SqlParameter[]{
                 new SqlParameter("@id",id)
             };
-            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            DataTable dt = DAO.dbTools.GetTable(sqlStr,paras);
             Blog blog = new Blog();
             blog = new Blog(Convert.ToInt32(dt.Rows[0][0].ToString()), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(),
                     dt.Rows[0][3].ToString(), Convert.ToDateTime(dt.Rows[0][4].ToString()), Convert.ToInt32(dt.Rows[0][5].ToString()),
@@ -147,7 +147,7 @@ public class BlogManager
     {
         try
         {
-            string sqlStr = "SELECT * FROM tBlog WHERE b_Title LIKE " + str;
+            string sqlStr = "SELECT * FROM tBlog WHERE b_Title LIKE '%" + str+"%'";
             DataTable dt = DAO.dbTools.GetTable(sqlStr);
             List<Blog> blogs = new List<Blog> { };
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -196,6 +196,11 @@ public class BlogManager
             System.Diagnostics.Debug.WriteLine(e);
             return null;
         }
+    }
+
+    public void s()
+    {
+        
     }
 
     /// <summary>

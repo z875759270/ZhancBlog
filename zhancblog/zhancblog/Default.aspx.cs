@@ -16,11 +16,6 @@ public partial class _Default : System.Web.UI.Page
     [WebMethod]
     public static void btnSearch(string str)
     {
-        BlogManager blogManager = new BlogManager();
-        List<Blog> blogs = blogManager.SelectBlogBySearch(str);
-        if (blogs != null)
-        {
-            
-        }
+
     }
 }

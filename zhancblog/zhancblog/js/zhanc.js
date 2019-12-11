@@ -14,7 +14,7 @@ function SetNavActive() {
 }
 
 function SearchBlog() {
-    window.location.href = "Search.aspx?search=" + $("[name='txtSearch']").val();
+    window.location.href = "Search.aspx?search=" + ($("[name='txtSearch']").val());
     /*$.ajax({
         type: "post",
         contentType: "application/json; charset=utf-8",
@@ -30,3 +30,4 @@ function SearchBlog() {
     });
     return false;*/
 }
+

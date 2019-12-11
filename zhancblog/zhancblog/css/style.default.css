@@ -673,7 +673,7 @@ section.featured-posts p {
 }
 
 section.featured-posts .text-inner {
-  padding: 70px 30px;
+  padding: 30px 30px;
   height: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
