@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
     $("[name='btnSearch']").click(SearchBlog);
     SetNavActive();
+    SetLbtSize();
+    window.onresize = SetLbtSize;
 })
 
 function SetNavActive() {
@@ -31,3 +33,31 @@ function SearchBlog() {
     return false;*/
 }
 
+function SetLbtSize() {
+    //获取浏览器窗口高度
+    $("#lbt").attr("style", "display:block;position:absolute;width:" + $(".hero").width() + "px;height:" + $(".hero").height()+"px");
+}
+
+function GetWidth() {
+    var winWidth = 0;
+    if (window.innerWidth)
+        winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth))
+        winWidth = document.body.clientWidth;
+    //通过深入Document内部对body进行检测，获取浏览器窗口高度
+    if (document.documentElement && document.documentElement.clientWidth)
+        winWidth = document.documentElement.clientWidth;
+    return winWidth;
+}
+
+function GetHeight() {
+    var winHeight = 0;
+    if (window.innerHeight)
+        winHeight = window.innerHeight;
+    else if ((document.body) && (document.body.clientHeight))
+        winHeight = document.body.clientHeight;
+    //通过深入Document内部对body进行检测，获取浏览器窗口高度
+    if (document.documentElement && document.documentElement.clientHeight)
+        winHeight = document.documentElement.clientHeight;
+    return winHeight;
+}

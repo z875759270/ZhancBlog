@@ -55,6 +55,9 @@ public class Blog
 /// </summary>
 public class BlogManager
 {
+    #region 增删改查
+
+
     /// <summary>
     /// 增加一篇BLOG
     /// </summary>
@@ -124,12 +127,39 @@ public class BlogManager
             SqlParameter[] paras = new SqlParameter[]{
                 new SqlParameter("@id",id)
             };
-            DataTable dt = DAO.dbTools.GetTable(sqlStr,paras);
+            DataTable dt = DAO.dbTools.GetTable(sqlStr, paras);
             Blog blog = new Blog();
             blog = new Blog(Convert.ToInt32(dt.Rows[0][0].ToString()), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(),
                     dt.Rows[0][3].ToString(), Convert.ToDateTime(dt.Rows[0][4].ToString()), Convert.ToInt32(dt.Rows[0][5].ToString()),
                     dt.Rows[0][6].ToString(), Convert.ToInt32(dt.Rows[0][7].ToString()), Convert.ToInt32(dt.Rows[0][8].ToString()));
             return blog;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 分类查询
+    /// </summary>
+    /// <param name="categoryid"></param>
+    /// <returns></returns>
+    public List<Blog> SelectBlogByCategoryid(int categoryid)
+    {
+        try
+        {
+            string sqlStr = "SELECT * FROM tBlog WHERE b_Categoryid=" + categoryid;
+            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
         }
         catch (Exception e)
         {
@@ -147,12 +177,12 @@ public class BlogManager
     {
         try
         {
-            string sqlStr = "SELECT * FROM tBlog WHERE b_Title LIKE '%" + str+"%'";
+            string sqlStr = "SELECT * FROM tBlog WHERE b_Title LIKE '%" + str + "%'";
             DataTable dt = DAO.dbTools.GetTable(sqlStr);
             List<Blog> blogs = new List<Blog> { };
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                blogs.Add( new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
                     dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
                     dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
             }
@@ -165,6 +195,82 @@ public class BlogManager
         }
     }
 
+    /// <summary>
+    /// 查询最热门的三篇博客
+    /// </summary>
+    /// <returns></returns>
+    public List<Blog> SelectHotestBlogs()
+    {
+        try
+        {
+            string sqlStr = "SELECT TOP(3) * FROM tBlog ORDER BY b_Hot DESC";
+            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 查询所有的Blog
+    /// </summary>
+    /// <returns></returns>
+    public List<Blog> SelectBlogAll()
+    {
+        try
+        {
+            string sqlStr = "SELECT * FROM tBlog";
+            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// +浏览
+    /// </summary>
+    /// <param name="id">blogid</param>
+    public void HotUp(int id)
+    {
+        try
+        {
+            string sqlStr = "UPDATE tBlog SET b_Hot=b_Hot+1 WHERE b_ID=@id";
+            SqlParameter[] paras = new SqlParameter[] {
+            new SqlParameter("@id",id)
+            };
+            DAO.dbTools.ExcuteSQL(sqlStr, paras);
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+        }
+    }
+
+
+    #endregion
+
+    #region 分页
     /// <summary>
     /// 分页查询
     /// </summary>
@@ -198,29 +304,39 @@ public class BlogManager
         }
     }
 
-    public void s()
-    {
-        
-    }
-
     /// <summary>
-    /// 查询所有的Blog
+    /// 显示一页记录
     /// </summary>
-    /// <returns></returns>
-    public List<Blog> SelectBlogAll()
+    /// <param name="blogs">要分页的List</param>
+    /// <param name="pageIndex">要显示第几页</param>
+    /// <param name="pageSize">一页多少记录</param>
+    /// <returns>一页记录</returns>
+    public List<Blog> ShowOnePage(List<Blog> blogs, int pageIndex, int pageSize = 4)
     {
         try
         {
-            string sqlStr = "SELECT * FROM tBlog";
-            DataTable dt = DAO.dbTools.GetTable(sqlStr);
-            List<Blog> blogs = new List<Blog> { };
-            for (int i = 0; i < dt.Rows.Count; i++)
+            int pageCount = GetPageCount(blogs, pageSize);
+            List<Blog> resList = new List<Blog> { };
+            if (pageIndex < pageCount)
             {
-                blogs.Add( new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
-                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
-                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+                for (int i = 0; i < pageSize; i++)
+                {
+                    resList.Add(blogs[i + ((pageIndex - 1) * pageSize)]);
+                }
+                return resList;
             }
-            return blogs;
+            else if (pageIndex == pageCount)
+            {
+                for (int i = 0; i < ((blogs.Count % pageSize) == 0 ? pageSize : blogs.Count % pageSize); i++)
+                {
+                    resList.Add(blogs[i + ((pageIndex - 1) * pageSize)]);
+                }
+                return resList;
+            }
+            else
+            {
+                return ShowOnePage(blogs, pageCount);  //pageIndex过大时矫正
+            }
         }
         catch (Exception e)
         {
@@ -228,4 +344,20 @@ public class BlogManager
             return null;
         }
     }
+
+    /// <summary>
+    /// 获取总页数
+    /// </summary>
+    /// <param name="blogs">要分页的List</param>
+    /// <param name="pageSize">单页的记录数</param>
+    /// <returns>总页数</returns>
+    public int GetPageCount(List<Blog> blogs, int pageSize = 4)
+    {
+        return (blogs.Count % pageSize) == 0 ? blogs.Count / pageSize : (blogs.Count / pageSize) + 1;
+    }
+    #endregion
+
+
+
+
 }

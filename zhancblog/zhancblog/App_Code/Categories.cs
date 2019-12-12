@@ -54,4 +54,23 @@ public class CategoriesManager
             return null;
         }
     }
+
+    public void UpdateCategorieNum()
+    {
+        try
+        {
+            string sqlStr = "UPDATE tCategories SET c_Sum=(SELECT count(*) FROM tBlog) WHERE c_ID=1;"
+                        + "UPDATE tCategories SET c_Sum = (SELECT count(*) FROM tBlog WHERE b_Categoryid = 2) WHERE c_ID = 2;"
+                        + "UPDATE tCategories SET c_Sum = (SELECT count(*) FROM tBlog WHERE b_Categoryid = 3) WHERE c_ID = 3;"
+                        + "UPDATE tCategories SET c_Sum = (SELECT count(*) FROM tBlog WHERE b_Categoryid = 4) WHERE c_ID = 4;"
+                        + "UPDATE tCategories SET c_Sum = (SELECT count(*) FROM tBlog WHERE b_Categoryid = 5) WHERE c_ID = 5;"
+                        + "UPDATE tCategories SET c_Sum = (SELECT count(*) FROM tBlog WHERE b_Categoryid = 6) WHERE c_ID = 6;";
+            DAO.dbTools.ExcuteSQL(sqlStr);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+
+    }
 }

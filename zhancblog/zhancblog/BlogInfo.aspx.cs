@@ -15,6 +15,8 @@ public partial class Default2 : System.Web.UI.Page
             BlogManager blogManager = new BlogManager();
             Blog blog = blogManager.SelectBlog(blogid);
             CreateBlogInfo(blog);
+            if(!IsPostBack)
+                blogManager.HotUp(blog.bID);
         }
         CreateCategories();
     }
@@ -53,8 +55,6 @@ public partial class Default2 : System.Web.UI.Page
         {
             System.Diagnostics.Debug.WriteLine(sa);
         }
-
-
     }
 
 
