@@ -7,15 +7,17 @@ using System.Web.UI.WebControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
+    BlogManager blogManager = new BlogManager();
     protected void Page_Load(object sender, EventArgs e)
     {
+        CreateHotBlog();
         int blogid = Request.QueryString["blogid"] != null ? Convert.ToInt32(Request.QueryString["blogid"].ToString()) : -1;
         if (blogid != -1)
         {
-            BlogManager blogManager = new BlogManager();
+
             Blog blog = blogManager.SelectBlog(blogid);
             CreateBlogInfo(blog);
-            if(!IsPostBack)
+            if (!IsPostBack)
                 blogManager.HotUp(blog.bID);
         }
         CreateCategories();
@@ -57,6 +59,27 @@ public partial class Default2 : System.Web.UI.Page
         }
     }
 
+    private void CreateHotBlog()
+    {
+        hotblogs.InnerHtml = "";
+        List<Blog> blogs = blogManager.SelectHotestBlogs();
+        for (int i = 0; i < blogs.Count; i++)
+        {
+            hotblogs.InnerHtml += "<a href=\"BlogInfo.aspx?blogid=" + blogs[i].bID + "\">\n" +
+            "                            <div class=\"item d-flex align-items-center\">\n" +
+            "                                <div class=\"image\">\n" +
+            "                                    <img src=\"" + blogs[i].bTitlepic + "\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                                </div>\n" +
+            "                                <div class=\"title\">\n" +
+            "                                    <strong>" + (blogs[i].bTitle.Length < 25 ? blogs[i].bTitle : (blogs[i].bTitle.Substring(0, 25) + "...")) + "</strong>\n" +
+            "                                    <div class=\"d-flex align-items-center\">\n" +
+            "                                        <div class=\"views\"><i class=\"icon-eye\"></i>" + blogs[i].bHot + "</div>\n" +
+            "                                    </div>\n" +
+            "                                </div>\n" +
+            "                            </div>\n" +
+            "                        </a>";
+        }
+    }
 
     /// <summary>
     /// 创建一篇Blog
@@ -78,7 +101,7 @@ public partial class Default2 : System.Web.UI.Page
             "                                <footer class=\"post-footer d-flex align-items-center\">\n" +
             "                                    <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                        <div class=\"avatar\">\n" +
-            "                                            <img src=\"img/avatar-3.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
+            "                                            <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
             "                                        <div class=\"title\"><span>John Doe</span></div>\n" +
             "                                    </a>\n" +
             "                                    <div class=\"date\"><i class=\"icon-clock\"></i>2 months ago</div>\n" +

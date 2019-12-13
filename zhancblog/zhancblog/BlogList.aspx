@@ -26,7 +26,7 @@
                                 <footer class="post-footer d-flex align-items-center">
                                     <a href="#" class="author d-flex align-items-center flex-wrap">
                                         <div class="avatar">
-                                            <img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+                                            <img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
                                         <div class="title"><span>John Doe</span></div>
                                     </a>
                                     <div class="date"><i class="icon-clock"></i>2 months ago</div>
@@ -50,7 +50,7 @@
                                 <div class="post-footer d-flex align-items-center">
                                     <a href="#" class="author d-flex align-items-center flex-wrap">
                                         <div class="avatar">
-                                            <img src="img/avatar-2.jpg" alt="..." class="img-fluid"></div>
+                                            <img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
                                         <div class="title"><span>John Doe</span></div>
                                     </a>
                                     <div class="date"><i class="icon-clock"></i>2 months ago</div>
@@ -74,7 +74,7 @@
                                 <div class="post-footer d-flex align-items-center">
                                     <a href="#" class="author d-flex align-items-center flex-wrap">
                                         <div class="avatar">
-                                            <img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+                                            <img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
                                         <div class="title"><span>John Doe</span></div>
                                     </a>
                                     <div class="date"><i class="icon-clock"></i>2 months ago</div>

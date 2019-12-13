@@ -222,6 +222,32 @@ public class BlogManager
     }
 
     /// <summary>
+    /// 查询最新的三篇博客
+    /// </summary>
+    /// <returns></returns>
+    public List<Blog> SelectLatestBlogs()
+    {
+        try
+        {
+            string sqlStr = "SELECT TOP(3) * FROM tBlog ORDER BY b_Updatedtime DESC";
+            DataTable dt = DAO.dbTools.GetTable(sqlStr);
+            List<Blog> blogs = new List<Blog> { };
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                blogs.Add(new Blog(Convert.ToInt32(dt.Rows[i][0].ToString()), dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][3].ToString(), Convert.ToDateTime(dt.Rows[i][4].ToString()), Convert.ToInt32(dt.Rows[i][5].ToString()),
+                    dt.Rows[i][6].ToString(), Convert.ToInt32(dt.Rows[i][7].ToString()), Convert.ToInt32(dt.Rows[i][8].ToString())));
+            }
+            return blogs;
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+            return null;
+        }
+    }
+
+    /// <summary>
     /// 查询所有的Blog
     /// </summary>
     /// <returns></returns>

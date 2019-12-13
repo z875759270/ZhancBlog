@@ -86,36 +86,18 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="logo">
-                        <h5 class="text-white">联系本人</h5>
+                        <h5 class="text-white" id="contactme">联系本人</h5>
                     </div>
                     <div class="contact-details">
                         <p>现居地：福州市仓山区</p>
                         <p>联系手机号：13665092860</p>
                         <p>Email：875759270@qq.com</p>
-                        <ul class="social-menu">
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
+                        <p>QQ：875759270</p>
+                        <p>Github：<a href="https://github.com/z875759270" target="_blank">ZhanCh</a> </p>
+                        <p>微博：<a href="https://weibo.com/u/5354252604?is_hot=1" target="_blank">@ZhanCh_</a></p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <%--<div class="menus d-flex">
-                        <ul class="list-unstyled">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Add Listing</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Privacy &amp; Policy</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Our Partners</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">How It Works</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>--%>
                 </div>
                 <div class="col-md-4">
                     <div class="latest-posts" id="hotestblogs" runat="server">
@@ -145,10 +127,12 @@
                 </div>
             </div>
         </div>
+
         <div class="copyrights">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
+                        <span id="sitetime" style="font-size: 10px"></span>
                         <p>Copyright &copy; 2019.<a target="_blank" href="http://www.zhanccc.com"><u>www.zhanccc.com</u></a> All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-right">
@@ -164,7 +148,6 @@
     <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/zhanc.js"></script>
-
 
 </body>
 </html>

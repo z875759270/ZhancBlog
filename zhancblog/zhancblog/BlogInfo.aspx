@@ -19,7 +19,7 @@
                     <header>
                         <h3 class="h5">最新发布</h3>
                     </header>
-                    <div class="blog-posts">
+                    <div class="blog-posts" id="hotblogs" runat="server">
                         <a href="#">
                             <div class="item d-flex align-items-center">
                                 <div class="image">

@@ -17,7 +17,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         BlogManager blogManager = new BlogManager();
         List<Blog> blogs = blogManager.SelectHotestBlogs();
         hotestblogs.InnerHtml = "";
-        for (int i = 0; i < 3; i++)
+
+        for (int i = 0; i < blogs.Count; i++)
         {
             hotestblogs.InnerHtml += "<a href=\"BlogInfo.aspx?blogid=" + blogs[i].bID + "\">\n" +
             "                            <div class=\"post d-flex align-items-center\">\n" +

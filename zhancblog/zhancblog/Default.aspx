@@ -8,32 +8,35 @@
 
 
     <!-- Hero Section-->
-    <section style=" background-size: cover; background-position: center center" class="hero">
-        <iframe id="lbt" src="lbt.aspx" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media"  scrolling="No" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" style="display:block;position:absolute"></iframe>
+    <section style="background-size: cover; background-position: center center" class="hero">
+        <iframe id="lbt" src="lbt.aspx" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" scrolling="No" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" style="display: block; position: absolute"></iframe>
         <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h1>Zhanc's Blog - Record My Growth.</h1>
-                        <a href="#" class="hero-link">Discover More</a>
-                    </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1>Zhanc's Blog - Record My Growth.</h1>
+                    <a href="#" class="hero-link">Discover More</a>
                 </div>
-                <a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i>Scroll Down</a>
-
             </div>
+            <a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i>Scroll Down</a>
+
+        </div>
     </section>
     <!-- Intro Section-->
     <section class="intro">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2 class="h3">Some great intro here</h2>
-                    <p class="text-big">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi.</p>
+                    <h2 class="h3">詹某的个人秀</h2>
+                    <p class="text-big">在此记录一些<b>文章</b>(或技术或无聊或杂七杂八的)，记录日常拍的<b>杂照</b>，记录<b>Everything</b>吧(毕竟买的服务器不能闲着×）
+                        <br />
+                        如果您在浏览过程中遇见了什么Bug或是有操作不顺畅的地方，敬请<a id="contactmea" href="#contactme"><strong>联系本人</strong></a>（俺看心情什么时候改嘻嘻嘻<br />
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <section class="featured-posts no-padding-top">
-        <div class="container">
+        <div class="container" id="blogpage" runat="server">
             <!-- Post-->
             <div class="row d-flex align-items-stretch">
                 <div class="text col-lg-7">
@@ -81,7 +84,7 @@
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="img/avatar-2.jpg" alt="..." class="img-fluid">
+                                        <img src="img/avatar-1.jpg" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title"><span>John Doe</span></div>
                                 </a>
@@ -107,7 +110,7 @@
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="img/avatar-3.jpg" alt="..." class="img-fluid">
+                                        <img src="img/avatar-1.jpg" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title"><span>John Doe</span></div>
                                 </a>
@@ -138,10 +141,10 @@
     <section class="latest-posts">
         <div class="container">
             <header>
-                <h2>Latest from the blog</h2>
-                <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <h2>最新博客</h2>
+                <p class="text-big">Don't waste your time.</p>
             </header>
-            <div class="row">
+            <div class="row" id="latestblogs" runat="server">
                 <div class="post col-md-4">
                     <div class="post-thumbnail">
                         <a href="BlogInfo.aspx">

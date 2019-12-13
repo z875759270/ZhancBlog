@@ -69,7 +69,7 @@ public partial class Default2 : System.Web.UI.Page
             "                                <footer class=\"post-footer d-flex align-items-center\">\n" +
             "                                    <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                        <div class=\"avatar\">\n" +
-            "                                            <img src=\"img/avatar-3.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
+            "                                            <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
             "                                        <div class=\"title\"><span>Zhanc</span></div>\n" +
             "                                    </a>\n" +
             "                                    <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToString() + "</div>\n" +
