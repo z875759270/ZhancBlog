@@ -56,7 +56,7 @@ public partial class Default2 : System.Web.UI.Page
         string[] tags = blog.bTags.Split(',');
         bloglist.InnerHtml += "            <div class=\"post col-xl-6\">\n" +
             "                            <div class=\"post-thumbnail\"><a href=\"BlogInfo.aspx?blogid=" + blog.bID + "\">\n" +
-            "                                <img src=\"" + blog.bTitlepic + "\" alt=\"...\" class=\"img-fluid\"></a></div>\n" +
+            "                                <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blog.bTitlepic + "\" alt=\"...\" class=\"img-fluid\"></a></div>\n" +
             "                            <div class=\"post-details\">\n" +
             "                                <div class=\"post-meta d-flex justify-content-between\">\n" +
             "                                    <div class=\"date meta-last\">" + blog.bUpdatedtime.ToShortDateString() + "</div>\n" +
@@ -69,7 +69,7 @@ public partial class Default2 : System.Web.UI.Page
             "                                <footer class=\"post-footer d-flex align-items-center\">\n" +
             "                                    <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                        <div class=\"avatar\">\n" +
-            "                                            <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
+            "                                            <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
             "                                        <div class=\"title\"><span>Zhanc</span></div>\n" +
             "                                    </a>\n" +
             "                                    <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToString() + "</div>\n" +

@@ -17,7 +17,7 @@
                     <a href="#" class="hero-link">Discover More</a>
                 </div>
             </div>
-            <a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i>Scroll Down</a>
+            <a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i>向下滑动</a>
 
         </div>
     </section>
@@ -52,7 +52,7 @@
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+                                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title"><span>John Doe</span></div>
                                 </a>
@@ -63,13 +63,13 @@
                     </div>
                 </div>
                 <div class="image col-lg-5">
-                    <img src="img/featured-pic-1.jpeg" alt="...">
+                    <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/featured-pic-1.jpeg" alt="...">
                 </div>
             </div>
             <!-- Post        -->
             <div class="row d-flex align-items-stretch">
                 <div class="image col-lg-5">
-                    <img src="img/featured-pic-2.jpeg" alt="...">
+                    <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/featured-pic-2.jpeg" alt="...">
                 </div>
                 <div class="text col-lg-7">
                     <div class="text-inner d-flex align-items-center">
@@ -84,7 +84,7 @@
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+                                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title"><span>John Doe</span></div>
                                 </a>
@@ -110,7 +110,7 @@
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+                                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title"><span>John Doe</span></div>
                                 </a>
@@ -121,13 +121,13 @@
                     </div>
                 </div>
                 <div class="image col-lg-5">
-                    <img src="img/featured-pic-3.jpeg" alt="...">
+                    <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/featured-pic-3.jpeg" alt="...">
                 </div>
             </div>
         </div>
     </section>
     <!-- Divider Section-->
-    <section style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom" class="divider">
+    <section style="background: url(https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/divider-bg.jpg); background-size: cover; background-position: center bottom" class="divider">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -148,7 +148,7 @@
                 <div class="post col-md-4">
                     <div class="post-thumbnail">
                         <a href="BlogInfo.aspx">
-                            <img src="img/blog-1.jpg" alt="..." class="img-fluid"></a>
+                            <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/blog-1.jpg" alt="..." class="img-fluid"></a>
                     </div>
                     <div class="post-details">
                         <div class="post-meta d-flex justify-content-between">
@@ -222,32 +222,32 @@
         <div class="row">
             <div class="mix col-lg-3 col-md-3 col-sm-6">
                 <div class="item">
-                    <a href="img/gallery-1.jpg" data-fancybox="gallery" class="image">
-                        <img src="img/gallery-1.jpg" alt="..." class="img-fluid">
+                    <a href="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-1.jpg" data-fancybox="gallery" class="image">
+                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-1.jpg" alt="..." class="img-fluid">
                         <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
                     </a>
                 </div>
             </div>
             <div class="mix col-lg-3 col-md-3 col-sm-6">
                 <div class="item">
-                    <a href="img/gallery-2.jpg" data-fancybox="gallery" class="image">
-                        <img src="img/gallery-2.jpg" alt="..." class="img-fluid">
+                    <a href="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-2.jpg" data-fancybox="gallery" class="image">
+                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-2.jpg" alt="..." class="img-fluid">
                         <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
                     </a>
                 </div>
             </div>
             <div class="mix col-lg-3 col-md-3 col-sm-6">
                 <div class="item">
-                    <a href="img/gallery-3.jpg" data-fancybox="gallery" class="image">
-                        <img src="img/gallery-3.jpg" alt="..." class="img-fluid">
+                    <a href="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-3.jpg" data-fancybox="gallery" class="image">
+                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-3.jpg" alt="..." class="img-fluid">
                         <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
                     </a>
                 </div>
             </div>
             <div class="mix col-lg-3 col-md-3 col-sm-6">
                 <div class="item">
-                    <a href="img/gallery-4.jpg" data-fancybox="gallery" class="image">
-                        <img src="img/gallery-4.jpg" alt="..." class="img-fluid">
+                    <a href="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-4.jpg" data-fancybox="gallery" class="image">
+                        <img src="https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery-4.jpg" alt="..." class="img-fluid">
                         <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div>
                     </a>
                 </div>

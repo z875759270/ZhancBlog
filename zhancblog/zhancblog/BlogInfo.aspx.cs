@@ -29,7 +29,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             string[] tags = blog.bTags.Split(',');
             bloginfo.InnerHtml = "<div class=\"post-thumbnail\">\n" +
-            "                            <img src=\"" + blog.bTitlepic + "\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                            <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blog.bTitlepic + "\" alt=\"...\" class=\"img-fluid\">\n" +
             "                        </div>\n" +
             "                        <div class=\"post-details\">\n" +
             "                            <div class=\"post-meta d-flex justify-content-between\">\n" +
@@ -39,12 +39,12 @@ public partial class Default2 : System.Web.UI.Page
             "                            <div class=\"post-footer d-flex align-items-center flex-column flex-sm-row\">\n" +
             "                                <a href=\"javascript:void(0)\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                    <div class=\"avatar\">\n" +
-            "                                        <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                                        <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
             "                                    </div>\n" +
             "                                    <div class=\"title\"><span>Zhanc</span></div>\n" +
             "                                </a>\n" +
             "                                <div class=\"d-flex align-items-center flex-wrap\">\n" +
-            "                                    <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToString() + "</div>\n" +
+            "                                    <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
             "                                    <div class=\"views\"><i class=\"icon-eye\"></i>" + blog.bHot + "</div>\n" +
             "                                </div>\n" +
             "                            </div>\n" +
@@ -68,7 +68,7 @@ public partial class Default2 : System.Web.UI.Page
             hotblogs.InnerHtml += "<a href=\"BlogInfo.aspx?blogid=" + blogs[i].bID + "\">\n" +
             "                            <div class=\"item d-flex align-items-center\">\n" +
             "                                <div class=\"image\">\n" +
-            "                                    <img src=\"" + blogs[i].bTitlepic + "\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                                    <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blogs[i].bTitlepic + "\" alt=\"...\" class=\"img-fluid\">\n" +
             "                                </div>\n" +
             "                                <div class=\"title\">\n" +
             "                                    <strong>" + (blogs[i].bTitle.Length < 25 ? blogs[i].bTitle : (blogs[i].bTitle.Substring(0, 25) + "...")) + "</strong>\n" +
@@ -79,36 +79,6 @@ public partial class Default2 : System.Web.UI.Page
             "                            </div>\n" +
             "                        </a>";
         }
-    }
-
-    /// <summary>
-    /// 创建一篇Blog
-    /// </summary>
-    private void CreateOneBlog()
-    {
-        string htmlStr = "            <div class=\"post col-xl-6\">\n" +
-            "                            <div class=\"post-thumbnail\"><a href=\"BlogInfo.aspx\">\n" +
-            "                                <img src=\"img/blog-post-1.jpeg\" alt=\"...\" class=\"img-fluid\"></a></div>\n" +
-            "                            <div class=\"post-details\">\n" +
-            "                                <div class=\"post-meta d-flex justify-content-between\">\n" +
-            "                                    <div class=\"date meta-last\">20 May | 2019</div>\n" +
-            "                                    <div class=\"category\"><a href=\"#\">Business</a></div>\n" +
-            "                                </div>\n" +
-            "                                <a href=\"BlogInfo.aspx\">\n" +
-            "                                    <h3 class=\"h4\">Alberto Savoia Can Teach You About Interior</h3>\n" +
-            "                                </a>\n" +
-            "                                <p class=\"text-muted\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>\n" +
-            "                                <footer class=\"post-footer d-flex align-items-center\">\n" +
-            "                                    <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
-            "                                        <div class=\"avatar\">\n" +
-            "                                            <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
-            "                                        <div class=\"title\"><span>John Doe</span></div>\n" +
-            "                                    </a>\n" +
-            "                                    <div class=\"date\"><i class=\"icon-clock\"></i>2 months ago</div>\n" +
-            "                                    <div class=\"comments meta-last\"><i class=\"icon-comment\"></i>12</div>\n" +
-            "                                </footer>\n" +
-            "                            </div>\n" +
-            "                        </div>";
     }
 
     /// <summary>

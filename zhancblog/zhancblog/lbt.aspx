@@ -12,10 +12,10 @@
     <form id="form1" runat="server">
         <div id="three-container"></div>
     </form>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/OrbitControls-2.js'></script>
+    <script src='https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/js/three.min.js'></script>
+    <script src='https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/js/tweenmax.min.js'></script>
+    <script src='https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/js/bas.js'></script>
+    <script src='https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/js/orbitcontrols-2.js'></script>
     <script src="js/script.js"></script>
     <script type="text/javascript">
          //获取浏览器窗口高度

@@ -39,7 +39,7 @@
     // Set this to false if you do not need to stack multiple instances
     closeExisting: false,
 
-    // Enable infinite gallery navigation
+    // Enable infinite https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery navigation
     loop: false,
 
     // Horizontal space between slides
@@ -294,7 +294,7 @@
       axis: "y" // Vertical (y) or horizontal (x) scrolling
     },
 
-    // Use mousewheel to navigate gallery
+    // Use mousewheel to navigate https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery
     // If 'auto' - enabled for images only
     wheel: "auto",
 
@@ -332,8 +332,8 @@
     //
     // Possible values:
     //   "close"           - close instance
-    //   "next"            - move to next gallery item
-    //   "nextOrClose"     - move to next gallery item or close if gallery has only one item
+    //   "next"            - move to next https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
+    //   "nextOrClose"     - move to next https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item or close if https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery has only one item
     //   "toggleControls"  - show/hide controls
     //   "zoom"            - zoom image (if loaded)
     //   false             - do nothing
@@ -546,7 +546,7 @@
     // All group items
     self.group = [];
 
-    // Existing slides (for current, next and previous gallery items)
+    // Existing slides (for current, next and previous https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery items)
     self.slides = {};
 
     // Create group elements
@@ -704,7 +704,7 @@
           };
         }
 
-        // Each gallery object has full collection of options
+        // Each https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery object has full collection of options
         obj.opts = $.extend(true, {}, self.opts, opts);
 
         // Do not merge buttons array
@@ -783,7 +783,7 @@
 
         obj.thumb = obj.opts.thumb || (obj.$thumb ? obj.$thumb[0].src : null);
 
-        // "caption" is a "special" option, it can be used to customize caption per gallery item
+        // "caption" is a "special" option, it can be used to customize caption per https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
         if ($.type(obj.opts.caption) === "function") {
           obj.opts.caption = obj.opts.caption.apply(item, [self, obj]);
         }
@@ -844,7 +844,7 @@
         self.group.push(obj);
       });
 
-      // Update controls if gallery is already opened
+      // Update controls if https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery is already opened
       if (Object.keys(self.slides).length) {
         self.updateControls();
 
@@ -1028,21 +1028,21 @@
       }
     },
 
-    // Change to previous gallery item
+    // Change to previous https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
     // ===============================
 
     previous: function(duration) {
       return this.jumpTo(this.currPos - 1, duration);
     },
 
-    // Change to next gallery item
+    // Change to next https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
     // ===========================
 
     next: function(duration) {
       return this.jumpTo(this.currPos + 1, duration);
     },
 
-    // Switch to selected gallery item
+    // Switch to selected https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
     // ===============================
 
     jumpTo: function(pos, duration) {
@@ -1220,7 +1220,7 @@
     },
 
     // Create new "slide" element
-    // These are gallery items  that are actually added to DOM
+    // These are https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery items  that are actually added to DOM
     // =======================================================
 
     createSlide: function(pos) {
@@ -2060,7 +2060,7 @@
 
       $iframe.attr("src", slide.src);
 
-      // Remove iframe if closing or changing gallery item
+      // Remove iframe if closing or changing https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item
       $slide.one("onReset", function() {
         // This helps IE not to throw errors when closing
         try {
@@ -2371,7 +2371,7 @@
 
     // Make content visible
     // This method is called right after content has been loaded or
-    // user navigates gallery and transition should start
+    // user navigates https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery and transition should start
     // ============================================================
 
     revealContent: function(slide) {
@@ -2530,7 +2530,7 @@
       return thumbPos.width > 0 && thumbPos.height > 0 ? rez : false;
     },
 
-    // Final adjustments after current gallery item is moved to position
+    // Final adjustments after current https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery item is moved to position
     // and it`s content is loaded
     // ==================================================================
 
@@ -5115,7 +5115,7 @@
             .filter(parentEl)
         );
 
-        // Add "click" event that performs gallery navigation
+        // Add "click" event that performs https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery navigation
         self.$grid.on("click", "a", function() {
           instance.jumpTo($(this).attr("data-index"));
         });
@@ -5417,34 +5417,34 @@
     };
   }
 
-  // Get info about gallery name and current index from url
+  // Get info about https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery name and current index from url
   function parseUrl() {
     var hash = window.location.hash.substr(1),
       rez = hash.split("-"),
       index = rez.length > 1 && /^\+?\d+$/.test(rez[rez.length - 1]) ? parseInt(rez.pop(-1), 10) || 1 : 1,
-      gallery = rez.join("-");
+      https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery = rez.join("-");
 
     return {
       hash: hash,
       /* Index is starting from 1 */
       index: index < 1 ? 1 : index,
-      gallery: gallery
+      https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery: https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery
     };
   }
 
   // Trigger click evnt on links to open new fancyBox instance
   function triggerFromUrl(url) {
-    if (url.gallery !== "") {
+    if (url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery !== "") {
       // If we can find element matching 'data-fancybox' atribute,
       // then triggering click event should start fancyBox
-      $("[data-fancybox='" + $.escapeSelector(url.gallery) + "']")
+      $("[data-fancybox='" + $.escapeSelector(url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery) + "']")
         .eq(url.index - 1)
         .focus()
         .trigger("click.fb-start");
     }
   }
 
-  // Get gallery name from current instance
+  // Get https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery name from current instance
   function getGalleryID(instance) {
     var opts, ret;
 
@@ -5468,38 +5468,38 @@
     // Update hash when opening/closing fancyBox
     $(document).on({
       "onInit.fb": function(e, instance) {
-        var url, gallery;
+        var url, https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery;
 
         if (instance.group[instance.currIndex].opts.hash === false) {
           return;
         }
 
         url = parseUrl();
-        gallery = getGalleryID(instance);
+        https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery = getGalleryID(instance);
 
-        // Make sure gallery start index matches index from hash
-        if (gallery && url.gallery && gallery == url.gallery) {
+        // Make sure https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery start index matches index from hash
+        if (https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery && url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery && https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery == url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery) {
           instance.currIndex = url.index - 1;
         }
       },
 
       "beforeShow.fb": function(e, instance, current, firstRun) {
-        var gallery;
+        var https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery;
 
         if (!current || current.opts.hash === false) {
           return;
         }
 
         // Check if need to update window hash
-        gallery = getGalleryID(instance);
+        https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery = getGalleryID(instance);
 
-        if (!gallery) {
+        if (!https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery) {
           return;
         }
 
         // Variable containing last hash value set by fancyBox
         // It will be used to determine if fancyBox needs to close after hash change is detected
-        instance.currentHash = gallery + (instance.group.length > 1 ? "-" + (current.index + 1) : "");
+        instance.currentHash = https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery + (instance.group.length > 1 ? "-" + (current.index + 1) : "");
 
         // If current hash is the same (this instance most likely is opened by hashchange), then do nothing
         if (window.location.hash === "#" + instance.currentHash) {
@@ -5578,12 +5578,12 @@
 
       if (fb) {
         // Now, compare hash values
-        if (fb.currentHash !== url.gallery + "-" + url.index && !(url.index === 1 && fb.currentHash == url.gallery)) {
+        if (fb.currentHash !== url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery + "-" + url.index && !(url.index === 1 && fb.currentHash == url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery)) {
           fb.currentHash = null;
 
           fb.close();
         }
-      } else if (url.gallery !== "") {
+      } else if (url.https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery !== "") {
         triggerFromUrl(url);
       }
     });
@@ -5600,7 +5600,7 @@
 // ==========================================================================
 //
 // Wheel
-// Basic mouse weheel support for gallery navigation
+// Basic mouse weheel support for https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/gallery navigation
 //
 // ==========================================================================
 (function(document, $) {

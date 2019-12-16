@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+
     $("[name='btnSearch']").click(SearchBlog);
     LinkAnimate();
     SetNavActive();

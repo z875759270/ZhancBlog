@@ -35,18 +35,18 @@ public partial class _Default : System.Web.UI.Page
             "                            <footer class=\"post-footer d-flex align-items-center\">\n" +
             "                                <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                    <div class=\"avatar\">\n" +
-            "                                        <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                                        <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
             "                                    </div>\n" +
             "                                    <div class=\"title\"><span>Zhanc</span></div>\n" +
             "                                </a>\n" +
-            "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[0].bUpdatedtime.ToString() + "</div>\n" +
+            "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[0].bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
             "                                <div class=\"comments\"><i class=\"icon-eye\"></i>" + blogs[0].bHot + "</div>\n" +
             "                            </footer>\n" +
             "                        </div>\n" +
             "                    </div>\n" +
             "                </div>\n" +
             "                <div class=\"image col-lg-5\">\n" +
-            "                    <img src=\"" + blogs[0].bTitlepic + "\" alt=\"...\">\n" +
+            "                    <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blogs[0].bTitlepic + "\" alt=\"...\">\n" +
             "                </div>\n" +
             "            </div>\n" +
             "        <!-- Post        -->\n" +
@@ -61,9 +61,9 @@ public partial class _Default : System.Web.UI.Page
             "                </header>\n" +
             "                <p>" + (blogs[1].bContent.Length >= 200 ? blogs[1].bContent.Substring(0, 200) : blogs[1].bContent) + "...</p>\n" +
             "                <footer class=\"post-footer d-flex align-items-center\"><a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
-            "                    <div class=\"avatar\"><img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
+            "                    <div class=\"avatar\"><img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
             "                    <div class=\"title\"><span>Zhanc</span></div></a>\n" +
-            "                  <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[1].bUpdatedtime.ToString() + "</div>\n" +
+            "                  <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[1].bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
             "                  <div class=\"comments\"><i class=\"icon-eye\"></i>" + blogs[1].bHot + "</div>\n" +
             "                </footer>\n" +
             "              </div>\n" +
@@ -85,18 +85,18 @@ public partial class _Default : System.Web.UI.Page
             "                            <footer class=\"post-footer d-flex align-items-center\">\n" +
             "                                <a href=\"#\" class=\"author d-flex align-items-center flex-wrap\">\n" +
             "                                    <div class=\"avatar\">\n" +
-            "                                        <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
+            "                                        <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\">\n" +
             "                                    </div>\n" +
             "                                    <div class=\"title\"><span>Zhanc</span></div>\n" +
             "                                </a>\n" +
-            "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[2].bUpdatedtime.ToString() + "</div>\n" +
+            "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blogs[2].bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
             "                                <div class=\"comments\"><i class=\"icon-eye\"></i>" + blogs[2].bHot + "</div>\n" +
             "                            </footer>\n" +
             "                        </div>\n" +
             "                    </div>\n" +
             "                </div>\n" +
             "                <div class=\"image col-lg-5\">\n" +
-            "                    <img src=\"" + blogs[2].bTitlepic + "\" alt=\"...\">\n" +
+            "                    <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blogs[2].bTitlepic + "\" alt=\"...\">\n" +
             "                </div>\n" +
             "            </div>";
     }
@@ -112,11 +112,11 @@ public partial class _Default : System.Web.UI.Page
             latestblogs.InnerHtml += "<div class=\"post col-md-4\">\n" +
             "                    <div class=\"post-thumbnail\">\n" +
             "                        <a href=\"BlogInfo.aspx?blogid=" + blogs[i].bID + "\">\n" +
-            "                            <img src=\"" + blogs[i].bTitlepic + "\" alt=\"...\" class=\"img-fluid\"></a>\n" +
+            "                            <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blogs[i].bTitlepic + "\" alt=\"...\" class=\"img-fluid\"></a>\n" +
             "                    </div>\n" +
             "                    <div class=\"post-details\">\n" +
             "                        <div class=\"post-meta d-flex justify-content-between\">\n" +
-            "                            <div class=\"date\">" + blogs[i].bUpdatedtime + "</div>\n" +
+            "                            <div class=\"date\">" + blogs[i].bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
             "                            <div class=\"category\"><a href=\"javascript:void(0)\">" + tags[0] + "</a><a href=\"javascript:void(0)\">" + tags[1] + "</a></div>\n" +
             "                        </div>\n" +
             "                        <a href=\"BlogInfo.aspx\">\n" +

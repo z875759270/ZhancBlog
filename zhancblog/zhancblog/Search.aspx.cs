@@ -49,17 +49,17 @@ public partial class Default2 : System.Web.UI.Page
                 "                            <footer class=\"post-footer d-flex align-items-center\">\n" +
                 "                                <a href=\"javascript:void(0)\" class=\"author d-flex align-items-center flex-wrap\">\n" +
                 "                                    <div class=\"avatar\">\n" +
-                "                                        <img src=\"img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
+                "                                        <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/img/avatar-1.jpg\" alt=\"...\" class=\"img-fluid\"></div>\n" +
                 "                                    <div class=\"title\"><span>Zhanc</span></div>\n" +
                 "                                </a>\n" +
-                "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToShortDateString() + "</div>\n" +
+                "                                <div class=\"date\"><i class=\"icon-clock\"></i>" + blog.bUpdatedtime.ToString().Substring(0, 16) + "</div>\n" +
                 "                                <div class=\"comments\"><i class=\"icon-eye\"></i>" + blog.bHot + "</div>\n" +
                 "                            </footer>\n" +
                 "                        </div>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
                 "                <div class=\"image col-lg-5\">\n" +
-                "                    <img src=\"" + blog.bTitlepic + "\" alt=\"...\">\n" +
+                "                    <img src=\"https://zhanc.oss-cn-shenzhen.aliyuncs.com/web/zhancblog/" + blog.bTitlepic + "\" alt=\"...\">\n" +
                 "                </div>\n" +
                 "            </div>";
         }
