@@ -130,13 +130,14 @@
 
         <div class="copyrights">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row text-center">
+                    <div class="col-md-12">
                         <span id="sitetime" style="font-size: 10px"></span>
+                        <br />
+                        <label style="font-size: 10px">你跋山涉水去见的人根本不会牢记你，他只会记得自己跋山涉水见过的人。</label>
                         <p>Copyright &copy; 2019.<a target="_blank" href="http://www.zhanccc.com"><u>www.zhanccc.com</u></a> All rights reserved.</p>
                     </div>
-                    <div class="col-md-6 text-right">
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -148,6 +149,5 @@
     <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/zhanc.js"></script>
-    
 </body>
 </html>

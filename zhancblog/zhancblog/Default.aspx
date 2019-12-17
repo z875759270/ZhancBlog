@@ -80,7 +80,7 @@
                                     <h2 class="h4">Alberto Savoia Can Teach You About Interior</h2>
                                 </a>
                             </header>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            <p>孤獨这两个字拆开来看，有孩童，有瓜果，有小犬，有蝴蝶，足以撑起一个盛夏傍晚的巷子口，人情味十足。稚儿擎瓜柳棚下，细犬逐蝶窄巷中，人间繁华多笑语，唯我空余两鬓风。——林语堂</p>
                             <footer class="post-footer d-flex align-items-center">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
@@ -131,7 +131,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h2>
+                    <h2>Good Good Study,Day Day Up.</h2>
                     <a href="#" class="hero-link">View More</a>
                 </div>
             </div>
@@ -197,7 +197,7 @@
         </div>
     </section>
     <!-- Newsletter Section-->
-    <section class="newsletter no-padding-top">
+    <%--<section class="newsletter no-padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -216,7 +216,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--%>
     <!-- Gallery Section-->
     <section class="gallery no-padding">
         <div class="row">
