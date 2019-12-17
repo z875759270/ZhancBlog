@@ -1,4 +1,4 @@
-
+/*global $, document, Chart, LINECHART, data, options, window, setTimeout*/
 $(document).ready(function () {
 
     'use strict';
@@ -85,7 +85,7 @@ $(document).ready(function () {
     // ---------------------------------------------- //
     // Search Bar
     // ---------------------------------------------- //
-    $('a.search-btn').on('click', function (e) {
+    $('.search-btn').on('click', function (e) {
         e.preventDefault();
         $('.search-area').fadeIn();
     });

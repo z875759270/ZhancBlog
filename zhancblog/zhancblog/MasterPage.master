@@ -148,6 +148,6 @@
     <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/zhanc.js"></script>
-
+    
 </body>
 </html>

@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-
     $("[name='btnSearch']").click(SearchBlog);
     LinkAnimate();
     SetNavActive();
@@ -107,6 +106,3 @@ function siteTime() {
     var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
     document.getElementById("sitetime").innerHTML = ("这破网站已运行" + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒");
 }
-
-
-
